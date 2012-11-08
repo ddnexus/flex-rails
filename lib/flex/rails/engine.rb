@@ -16,6 +16,7 @@ module Flex
 
       rake_tasks do
         Flex::Utils.load_tasks
+        Flex::Backup.load_tasks if defined?(Flex::Backup)
       end
 
       config.to_prepare do
