@@ -3,11 +3,11 @@ module Flex
     class Engine < ::Rails::Engine
 
       ActiveSupport.on_load(:before_configuration) do
-        config.flex = Flex::Configuration
+        config.flex = Configuration
         config.flex.variables[:index] = [self.class.name.split('::').first.underscore, ::Rails.env].join('_')
         config.flex.config_file       = ::Rails.root.join('config', 'flex.yml').to_s
         config.flex.flex_dir          = ::Rails.root.join('app', 'flex').to_s
-        config.flex.debug             = ::Rails.env.development?
+        config.flex.log.enabled       = ::Rails.env.development?
       end
 
       ActiveSupport.on_load(:after_initialize) do
@@ -15,8 +15,13 @@ module Flex
       end
 
       rake_tasks do
-        Flex::Utils.load_tasks
-        Flex::Backup.load_tasks if defined?(Flex::Backup)
+        Utils.load_tasks
+        Backup.load_tasks if defined?(Flex::Backup)
+      end
+
+      console do
+        config.flex.log.to_rails  = false
+        config.flex.log.to_stdout = true
       end
 
       config.to_prepare do
