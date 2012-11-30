@@ -7,7 +7,8 @@ module Flex
         config.flex.variables[:index] = [self.class.name.split('::').first.underscore, ::Rails.env].join('_')
         config.flex.config_file       = ::Rails.root.join('config', 'flex.yml').to_s
         config.flex.flex_dir          = ::Rails.root.join('app', 'flex').to_s
-        config.flex.log.enable        = ::Rails.env.development?
+        config.flex.logger            = Flex::Rails::Logger.new(STDOUT)
+        config.flex.logger.level      = ::Logger::DEBUG if ::Rails.env.development?
       end
 
       ActiveSupport.on_load(:after_initialize) do
@@ -20,8 +21,8 @@ module Flex
       end
 
       console do
-        config.flex.log.to_rails  = false
-        config.flex.log.to_stdout = true
+        config.flex.logger.log_to_rails_logger = false
+        config.flex.logger.log_to_stdout       = true
       end
 
       config.to_prepare do

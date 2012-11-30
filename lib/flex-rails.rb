@@ -3,11 +3,6 @@ require 'rails'
 require 'flex/rails/helper'
 require 'flex/rails/logger'
 
-Flex::Configuration.log.configure do |log|
-  log.to_rails  = true
-  log.to_stdout = false
-end
-
 if ::Rails.respond_to?(:version) && ::Rails.version.to_i >= 3
   require 'flex/rails/engine'
 else
