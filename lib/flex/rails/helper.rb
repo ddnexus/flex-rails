@@ -6,7 +6,7 @@ module Flex
       def after_initialize
         # we need to reload the flex API methods with the new variables
         Flex.reload!
-        Flex::Manager.init_models
+        Manager.init_models
       end
 
     end
