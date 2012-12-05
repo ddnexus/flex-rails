@@ -23,6 +23,7 @@ module Flex
       console do
         config.flex.logger.log_to_rails_logger = false
         config.flex.logger.log_to_stdout       = true
+        config.flex.logger.debug_result        = false
       end
 
       config.to_prepare do
