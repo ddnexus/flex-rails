@@ -3,7 +3,7 @@ module Flex
     class Engine < ::Rails::Engine
 
       ActiveSupport.on_load(:before_configuration) do
-        config.flex = C11n
+        config.flex = Conf
         config.flex.variables[:index] = [self.class.name.split('::').first.underscore, ::Rails.env].join('_')
         config.flex.config_file       = ::Rails.root.join('config', 'flex.yml').to_s
         config.flex.flex_dir          = ::Rails.root.join('app', 'flex').to_s
