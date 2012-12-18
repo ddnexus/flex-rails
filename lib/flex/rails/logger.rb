@@ -8,7 +8,7 @@ module Flex
         super
         self.formatter = proc do |severity, datetime, progname, msg|
           flex_formatted = flex_format(severity, msg)
-          ::Rails.logger.send(severity.downcase.to_sym, flex_formatted) if log_to_rails_logger
+          ::Rails.logger.send(severity.downcase.to_sym, flex_formatted) if log_to_rails_logger && ::Rails.logger.respond_to?(severity.downcase.to_sym)
           flex_formatted if log_to_stdout
         end
         @log_to_rails_logger = true
