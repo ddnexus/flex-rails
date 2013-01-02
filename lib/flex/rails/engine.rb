@@ -16,8 +16,10 @@ module Flex
       end
 
       rake_tasks do
-        Utils.load_tasks
-        Backup.load_tasks if defined?(Flex::Backup)
+        Flex::LIB_PATHS.each do |path|
+          task_path = "#{path}/tasks.rake"
+          load task_path if File.file?(task_path)
+        end
       end
 
       console do
