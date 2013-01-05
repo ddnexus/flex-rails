@@ -9,10 +9,10 @@ ANCHORS:
 
 # this is a a basic template loaded in your class <%= @class_name %>
 # it defines the 'q' tag. You can check its usage from the rails console by just typing:
-# >> puts <%= @class_name %>.flex.info
-# You can eventually restrict the info to a single method by pasing its name:
-# >> puts <%= @class_name %>.flex.info :search
-# see the detailed doc for this feature at https://github.com/ddnexus/flex/wiki/Selfdoc
+# >> puts <%= @class_name %>.flex.doc
+# You can eventually restrict the doc to a single method by pasing its name:
+# >> puts <%= @class_name %>.flex.doc :search
+# see the detailed doc for this feature at https://github.com/ddnexus/flex/wiki/Self-Documentation
 search:
 - query:
     query_string: <<q= "*">>

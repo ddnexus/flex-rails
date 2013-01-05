@@ -10,21 +10,15 @@ Flex::Configuration.configure do |config|
 
   # Add the default variables here
   # see also the details Variables documentation at https://github.com/ddnexus/flex/wiki/Variables
-  # config.variables.add :index => 'my_index',
-  #                      :type  => 'project',
-  #                      :anything => 'anything
+  # config.variables.deep_merge! :index => 'my_index',
+  #                              :type  => 'project',
+  #                              :anything => 'anything
 
-  # The custom url of your ElasticSearch server
-  # config.base_uri = 'http://localhost:9200'
-
-  # Set it to true to log the debug infos (true by default in development mode)
-  # config.debug = false
-
-  # Debug info are actually valid curl commands
-  # config.debug_to_curl = false
-
-  # The custom logger you want Flex to use. Default Rails.logger
-  # config.logger = Logger.new(STDERR)
+  # Logger variables: see https://github.com/ddnexus/flex/wiki/Configuration
+  # config.logger.debug_variables = false
+  # config.logger.debug_request   = false
+  # config.logger.debug_result    = false
+  # config.logger.curl_format     = false
 
   # Custom config file path
   # config.config_file = '/custom/path/to/flex.yml',
@@ -35,10 +29,13 @@ Flex::Configuration.configure do |config|
   # The custom http_client you may want to implement
   # config.http_client = 'Your::Client'
 
+  # The custom url of your ElasticSearch server
+  # config.http_client.base_uri = 'http://localhost:9200'
+
   # The options passed to the http_client. They are client specific.
-  # config.http_client_options = {:timeout => 5}
+  # config.http_client.options = {:timeout => 5}
 
   # Experimental: checks the response and return a boolean (should raise?)
-  # config.raise_proc = proc{|response| response.status >= 400}
+  # config.http_client.raise_proc = proc{|response| response.status >= 400}
 
 end
