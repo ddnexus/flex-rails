@@ -6,7 +6,7 @@ module Flex
       def after_initialize
         # we need to reload the flex API methods with the new variables
         Flex.reload!
-        Manager.init_models
+        Conf.flex_models && Conf.flex_models.each {|m| eval"::#{m}" if m.is_a?(String) }
       end
 
     end
