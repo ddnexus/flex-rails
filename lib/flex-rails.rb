@@ -3,7 +3,7 @@ require 'rails'
 require 'flex/rails/helper'
 require 'flex/rails/logger'
 
-Flex::LIB_PATHS << __FILE__.sub(/flex-rails.rb$/, '')
+Flex::LIB_PATHS << File.dirname(__FILE__)
 
 if ::Rails.respond_to?(:version) && ::Rails.version.to_i >= 3
   require 'flex/rails/engine'
