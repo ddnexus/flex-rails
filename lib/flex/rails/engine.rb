@@ -9,6 +9,7 @@ module Flex
         config.flex.flex_dir          = ::Rails.root.join('app', 'flex').to_s
         config.flex.logger            = Logger.new(STDOUT)
         config.flex.logger.level      = ::Logger::DEBUG if ::Rails.env.development?
+        config.flex.result_extenders |= [ Flex::Result::RailsHelper ]
       end
 
       ActiveSupport.on_load(:after_initialize) do

@@ -1,5 +1,6 @@
 require 'flex'
 require 'rails'
+require 'flex/result/rails_helper'
 require 'flex/rails/helper'
 require 'flex/rails/logger'
 
@@ -12,5 +13,6 @@ else
     c.config_file = "#{RAILS_ROOT}/config/flex.yml"
     c.flex_dir    = "#{RAILS_ROOT}app/flex"
     c.debug       = RAILS_ENV == 'development'
+    c.result_extenders |= [ Flex::Result::RailsHelper ]
   end
 end
