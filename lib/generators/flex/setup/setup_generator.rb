@@ -30,16 +30,16 @@ class Flex::SetupGenerator < Rails::Generators::Base
 
 
   def show_setup_message
-    say <<-text, :style => :green
+    Prompter.say <<-text, :style => :green
 
     Setup done!
 
     During prototyping, remember also:
 
     1. each time you add a `Flex::Model` you should add its name to the "config/initializers/flex.rb"
-    2. each time you add/change a flex.parent relation you should reindex your DB(s) with rake `flex:import FORCE=true`
+    2. each time you add/change a flex.parent relation you should reindex your DB(s)
 
-    The complete documentation is available at https://github.com/ddnexus/flex/wiki
+    The complete documentation is available at https://github.com/ddnexus/flex-doc/doc
     If you have any problem with Flex, please report the issue at https://github.com/ddnexus/flex/issues.
     text
   end

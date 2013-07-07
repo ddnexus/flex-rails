@@ -1,4 +1,4 @@
-# ANCHORS litheral key: it will not be used as template
+# ANCHORS literal key: it will not be used as template
 # you can store here fragments of structures to reuse below
 ANCHORS:
   -
