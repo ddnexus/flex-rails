@@ -4,7 +4,9 @@ module Flex
 
       ActiveSupport.on_load(:before_configuration) do
         config.flex = Conf
-        config.flex.variables[:index] = [self.class.name.split('::').first.underscore, ::Rails.env].join('_')
+        app_id = [self.class.name.split('::').first.underscore, ::Rails.env].join('_')
+        config.flex.app_id            = app_id
+        config.flex.variables[:index] = app_id
         config.flex.config_file       = ::Rails.root.join('config', 'flex.yml').to_s
         config.flex.flex_dir          = ::Rails.root.join('app', 'flex').to_s
         config.flex.logger            = Logger.new(STDOUT)
