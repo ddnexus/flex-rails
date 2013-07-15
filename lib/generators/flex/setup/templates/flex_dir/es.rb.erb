@@ -1,10 +1,11 @@
 # inspect the methods loaded in this module and their usage
 # in the rails console by just typing:
-# >> puts <%= @class_name %>.flex.doc
+# >> puts <%= @module_name %>.flex.doc
 # you can eventually restrict the doc to a single method by pasing its name:
-# >> puts <%= @class_name %>.flex.doc :search
+# >> puts <%= @module_name %>.flex.doc :search
+# see the detailed doc for this feature at http://ddnexus.github.io/flex/doc/2-flex/4-Self-Documentation.html
 
-module <%= @class_name %>
+module <%= @module_name %>
 
   extend self
 
@@ -13,7 +14,7 @@ module <%= @class_name %>
 
   # enables the templating
   include Flex::Templates
-  # loads the <%= "#{@class_name.underscore}.yml" %> file
+  # loads the <%= "#{@module_name.underscore}.yml" %> file
   flex.load_search_source
 
   # you may need to add more method here, usually custom scopes

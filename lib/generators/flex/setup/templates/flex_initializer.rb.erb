@@ -1,4 +1,4 @@
-# see the detailed Configuration documentation at https://github.com/ddnexus/flex/wiki/Configuration
+# see the detailed Configuration documentation at http://ddnexus.github.io/flex/doc/1-Global-Doc/3-Configuration.html
 
 Flex::Configuration.configure do |config|
 
@@ -9,12 +9,12 @@ Flex::Configuration.configure do |config|
   config.result_extenders |= [ <%= "#{@extender_name}" %> ]
 
   # Add the default variables here
-  # see also the details Variables documentation at https://github.com/ddnexus/flex/wiki/Variables
+  # see also the details Variables documentation at http://ddnexus.github.io/flex/doc/2-flex/2-Templating/4-Variables.html
   # config.variables.deep_merge! :index => 'my_index',
   #                              :type  => 'project',
   #                              :anything => 'anything
 
-  # Logger variables: see https://github.com/ddnexus/flex/wiki/Configuration
+  # Logger variables: see http://ddnexus.github.io/flex/doc/1-Global-Doc/3-Configuration.html
   # config.logger.debug_variables = false
   # config.logger.debug_request   = false
   # config.logger.debug_result    = false

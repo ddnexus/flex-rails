@@ -9,9 +9,9 @@ class Flex::SetupGenerator < Rails::Generators::Base
   end
 
   def ask_base_name
-    @class_name = Prompter.ask('Please, enter a class name for your Search class. Choose a name not defined in your app.',
+    @module_name = Prompter.ask('Please, enter a class name for your Search class. Choose a name not defined in your app.',
                                :default => 'FlexSearch', :hint => '[<enter>=FlexSearch]')
-    @extender_name = "#{@class_name}Extender"
+    @extender_name = "#{@module_name}Extender"
   end
 
   def add_config_flex_file
@@ -23,8 +23,8 @@ class Flex::SetupGenerator < Rails::Generators::Base
   end
 
   def create_flex_dir
-    template 'flex_dir/es.rb.erb',          Rails.root.join('app', 'flex', "#{@class_name.underscore}.rb")
-    template 'flex_dir/es.yml.erb',         Rails.root.join('app', 'flex', "#{@class_name.underscore}.yml")
+    template 'flex_dir/es.rb.erb',          Rails.root.join('app', 'flex', "#{@module_name.underscore}.rb")
+    template 'flex_dir/es.yml.erb',         Rails.root.join('app', 'flex', "#{@module_name.underscore}.yml")
     template 'flex_dir/es_extender.rb.erb', Rails.root.join('app', 'flex', "#{@extender_name.underscore}.rb")
   end
 

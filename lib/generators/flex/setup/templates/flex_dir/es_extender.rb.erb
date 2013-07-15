@@ -1,9 +1,9 @@
-# see the detailed Extenders documentation at https://github.com/ddnexus/flex/wiki/Extenders
+# see the detailed Extenders documentation at http://ddnexus.github.io/flex/doc/2-flex/3-Result-Extenders.html
 
 module <%= @extender_name  %>
 
   # set this method to restrict this extender to certain types of results
-  # see the other Flex extenders for reference (https://github.com/ddnexus/flex/tree/master/lib/flex/result)
+  # see the other Flex extenders for reference
   def self.should_extend?(response)
     false
   end
