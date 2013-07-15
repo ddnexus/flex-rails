@@ -28,6 +28,7 @@ module Flex
       console do
         config.flex.logger.log_to_rails_logger = false
         config.flex.logger.log_to_stderr       = true
+        config.flex.logger.debug_variables     = false
         config.flex.logger.debug_result        = false
       end
 
