@@ -1,4 +1,5 @@
 require 'flex'
+require 'flex-model'
 require 'rails'
 require 'flex/result/rails_helper'
 require 'flex/rails/helper'

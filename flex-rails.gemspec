@@ -18,7 +18,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'rails', '>=2.0'
 
   s.add_runtime_dependency 'flex',        version
-  s.add_runtime_dependency 'flex-scopes', version
   s.add_runtime_dependency 'flex-model',  version
 
   s.add_runtime_dependency 'prompter', '~> 0.1.5'
