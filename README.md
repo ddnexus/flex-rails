@@ -2,8 +2,9 @@
 
 Rails integration for Flex: provides the engine, generators and helpers to integrate Flex with Rails
 
-## Useful Links
+## Links
 
+* [Flex Repository](https://github.com/ddnexus/flex)
 * [Flex Project (Global Documentation)](http://ddnexus.github.io/flex/doc/)
 * [flex-rails Gem (Specific Documentation)](http://ddnexus.github.io/flex/doc/5-flex-rails)
 * [Issues](https://github.com/ddnexus/flex-rails/issues)
