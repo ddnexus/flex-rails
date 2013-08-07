@@ -9,8 +9,8 @@ class Flex::SetupGenerator < Rails::Generators::Base
   end
 
   def ask_base_name
-    @module_name = Prompter.ask('Please, enter a class name for your Search class. Choose a name not defined in your app.',
-                               :default => 'FlexSearch', :hint => '[<enter>=FlexSearch]')
+    @module_name   = Prompter.ask('Please, enter a class name for your Search class. Choose a name not defined in your app.',
+                                  :default => 'FlexSearch', :hint => '[<enter>=FlexSearch]')
     @extender_name = "#{@module_name}Extender"
   end
 
@@ -36,8 +36,13 @@ class Flex::SetupGenerator < Rails::Generators::Base
 
     During prototyping, remember also:
 
-    1. each time you add a `Flex::Model` you should add its name to the "config/initializers/flex.rb"
-    2. each time you add/change a flex.parent relation you should reindex your DB(s)
+      1. each time you include a new Flex::ModelIndexer
+         you should add its name to the config.flex_model in "config/initializers/flex.rb"
+
+      2. each time you include a new Flex::ActiveModel
+         you should add its name to the config.flex_active_model in "config/initializers/flex.rb"
+
+      3. each time you add/change a flex.parent relation you should reindex
 
     The complete documentation is available at https://github.com/ddnexus/flex-doc/doc
     If you have any problem with Flex, please report the issue at https://github.com/ddnexus/flex/issues.
